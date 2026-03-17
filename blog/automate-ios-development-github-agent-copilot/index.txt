@@ -1,0 +1,288 @@
+1:"$Sreact.fragment"
+2:I[9766,[],""]
+3:I[8924,[],""]
+5:I[4431,[],"OutletBoundary"]
+7:I[5278,[],"AsyncMetadataOutlet"]
+9:I[4431,[],"ViewportBoundary"]
+b:I[4431,[],"MetadataBoundary"]
+c:"$Sreact.suspense"
+e:I[7150,[],""]
+:HL["/skillfield-landing-dev/_next/static/css/bb7dabb493078b71.css","style"]
+0:{"P":null,"b":"GepbvRhi97acXAyIfPqfn","p":"/skillfield-landing-dev","c":["","blog","automate-ios-development-github-agent-copilot",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","automate-ios-development-github-agent-copilot","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/skillfield-landing-dev/_next/static/css/bb7dabb493078b71.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","automate-ios-development-github-agent-copilot","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$L6",["$","$L7",null,{"promise":"$@8"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$L9",null,{"children":"$La"}],null],["$","$Lb",null,{"children":["$","div",null,{"hidden":true,"children":["$","$c",null,{"fallback":null,"children":"$Ld"}]}]}]]}],false]],"m":"$undefined","G":["$e",[]],"s":false,"S":true}
+f:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","953","static/chunks/app/blog/%5Bslug%5D/page-11e7c977ff23a5b5.js"],""]
+10:T4de0,<p>iOS development has historically been labour-intensive: writing boilerplate Swift or Objective-C, crafting verbose UIKit layouts, configuring Xcode project settings, and manually authoring test cases. The combination of <strong>GitHub Agent HQ</strong> (GitHub's agentic AI assistant) and <strong>Visual Studio Code Copilot</strong> changes that equation significantly. Together, they form a continuous-assist pipeline that can handle a substantial share of day-to-day coding tasks — letting engineers focus on architecture, product decisions, and quality assurance rather than repetitive implementation.</p>
+<p>This post gives a detailed, honest breakdown of what can be automated, how each tool contributes, and where human involvement remains non-negotiable.</p>
+
+<h2>Understanding the Two Tools</h2>
+<h3>GitHub Agent HQ</h3>
+<p>GitHub Agent HQ is GitHub's orchestration layer for autonomous coding tasks. It can be invoked directly from GitHub issues or pull requests and operates across the full repository lifecycle:</p>
+<ul>
+<li><strong>Issue → code</strong>: Given a GitHub issue, Agent HQ can create a branch, implement the requested feature or fix, run CI, and open a draft PR — without any manual coding.</li>
+<li><strong>Code review assistance</strong>: Agent HQ reviews open pull requests, suggests improvements, checks for anti-patterns, and can apply fixes automatically.</li>
+<li><strong>Repository maintenance</strong>: Dependency upgrades, stale branch cleanup, automated changelog entries, and release note generation.</li>
+</ul>
+<h3>Visual Studio Code Copilot</h3>
+<p>VS Code Copilot provides real-time, context-aware assistance while you write code:</p>
+<ul>
+<li><strong>Inline completions</strong>: Suggests multi-line Swift or SwiftUI blocks as you type, including full function bodies and protocol conformances.</li>
+<li><strong>Copilot Chat</strong>: A conversational interface where you can ask architectural questions, request refactors, explain existing code, or generate tests.</li>
+<li><strong>Agent mode in VS Code</strong>: When enabled, Copilot acts as a longer-horizon assistant that can read files, make multi-file edits, and execute terminal commands to complete a defined task.</li>
+<li><strong>MCP tool integration</strong>: Through Model Context Protocol (MCP) servers, Copilot can call build tools (<code>xcodebuild</code>), run simulators, and interact with package managers (<code>swift package</code>) directly from the editor.</li>
+</ul>
+
+<h2>What Can Be Fully Automated</h2>
+<h3>1. Boilerplate and Scaffolding</h3>
+<p><strong>Automation level: ~95%</strong></p>
+<p>The most immediately productive use of both tools is eliminating boilerplate. iOS projects accumulate enormous amounts of repetitive code:</p>
+<ul>
+<li><strong>SwiftUI views</strong>: Copilot generates complete <code>View</code> structs from a comment or struct name. A prompt like <code>// A settings screen with toggle for notifications, dark mode, and a logout button</code> produces a working, stylistically consistent <code>SettingsView</code> in seconds.</li>
+<li><strong>UIKit view controllers</strong>: Even in legacy codebases, Copilot scaffolds <code>UIViewController</code> subclasses with lifecycle methods, delegates, and Auto Layout constraints.</li>
+<li><strong>Data models and Codable conformances</strong>: Given a JSON schema or a rough description, Copilot generates <code>struct</code>/<code>class</code> definitions with correct <code>CodingKeys</code>, <code>Decodable</code>/<code>Encodable</code> conformances, and optional handling.</li>
+<li><strong>Repository and service layers</strong>: Copilot creates protocol definitions alongside concrete implementations, respecting patterns like Repository, Coordinator, or MVVM that already exist in the codebase.</li>
+</ul>
+<p><strong>Example — generating a network service in seconds:</strong></p>
+<pre><code>// Prompt: Create a UserService that fetches a user profile from /api/v1/users/{id}
+// using async/await and returns a typed result.
+
+protocol UserServiceProtocol {
+    func fetchUser(id: String) async throws -&gt; UserProfile
+}
+
+final class UserService: UserServiceProtocol {
+    private let session: URLSession
+    private let baseURL: URL
+
+    init(session: URLSession = .shared, baseURL: URL) {
+        self.session = session
+        self.baseURL = baseURL
+    }
+
+    func fetchUser(id: String) async throws -&gt; UserProfile {
+        let url = baseURL.appendingPathComponent("api/v1/users/\(id)")
+        let (data, response) = try await session.data(from: url)
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw APIError.invalidResponse
+        }
+        return try JSONDecoder().decode(UserProfile.self, from: data)
+    }
+}
+</code></pre>
+<p>Agent HQ can go further: create this file, add it to the Xcode project manifest, wire it into the dependency injection container, and open a PR — all triggered from a single issue comment.</p>
+
+<h3>2. Unit and Integration Test Generation</h3>
+<p><strong>Automation level: ~80%</strong></p>
+<p>Writing tests is one of the highest-value but most time-consuming activities in iOS development. Copilot accelerates test authoring significantly:</p>
+<ul>
+<li><strong>Unit tests for pure logic</strong>: Given a function signature and implementation, Copilot generates a full XCTest case covering happy paths, edge cases (nil inputs, empty arrays, boundary values), and expected errors.</li>
+<li><strong>Mock and stub generation</strong>: Copilot reads your protocol definitions and generates mock implementations with spy tracking, configurable return values, and call-count assertions — patterns that would otherwise take 10–15 minutes per mock to write manually.</li>
+<li><strong>Snapshot test scaffolding</strong>: Copilot generates <code>assertSnapshot</code> calls for SwiftUI views and UIKit components, registering the correct traits and device configurations.</li>
+</ul>
+<p><strong>Example — auto-generated test for the UserService above:</strong></p>
+<pre><code>final class UserServiceTests: XCTestCase {
+    var sut: UserService!
+    var mockSession: MockURLSession!
+
+    override func setUp() {
+        super.setUp()
+        mockSession = MockURLSession()
+        sut = UserService(session: mockSession,
+                          baseURL: URL(string: "https://api.example.com")!)
+    }
+
+    func test_fetchUser_success_returnsDecodedProfile() async throws {
+        // Arrange
+        let profile = UserProfile(id: "42", name: "Alex", email: "alex@example.com")
+        mockSession.data = try JSONEncoder().encode(profile)
+        mockSession.response = HTTPURLResponse(
+            url: URL(string: "https://api.example.com/api/v1/users/42")!,
+            statusCode: 200,
+            httpVersion: nil,
+            headerFields: nil
+        )
+
+        // Act
+        let result = try await sut.fetchUser(id: "42")
+
+        // Assert
+        XCTAssertEqual(result.id, "42")
+        XCTAssertEqual(result.name, "Alex")
+    }
+
+    func test_fetchUser_invalidStatus_throwsError() async {
+        // Arrange
+        mockSession.data = Data()
+        mockSession.response = HTTPURLResponse(
+            url: URL(string: "https://api.example.com/api/v1/users/1")!,
+            statusCode: 404,
+            httpVersion: nil,
+            headerFields: nil
+        )
+
+        // Act &amp; Assert
+        await XCTAssertThrowsErrorAsync(try await sut.fetchUser(id: "1")) { error in
+            XCTAssertEqual(error as? APIError, .invalidResponse)
+        }
+    }
+}
+</code></pre>
+<p>Where automation falls short is in <strong>behaviour-level tests</strong> that require deep understanding of product intent — for example, verifying that a checkout flow correctly handles a promo code that only applies on weekdays. A human must define that acceptance criterion; Copilot can then write the test body.</p>
+
+<h3>3. Code Refactoring and Modernisation</h3>
+<p><strong>Automation level: ~85%</strong></p>
+<p>Legacy iOS codebases often mix callback-based networking, UIKit with programmatic layout, and Objective-C interop layers. Copilot and Agent HQ can refactor at scale:</p>
+<ul>
+<li><strong>Completion handler → async/await</strong>: Copilot rewrites closure-based API calls to Swift Concurrency in context, including correct <code>Task</code> scoping for UI updates and actor isolation.</li>
+<li><strong>UIKit → SwiftUI migration</strong>: Agent HQ can analyse a <code>UIViewController</code>, extract its data model, and produce a semantically equivalent SwiftUI <code>View</code> — flagging cases where SwiftUI doesn't yet have a direct equivalent (e.g., certain <code>UICollectionView</code> layouts).</li>
+<li><strong>Storyboard → programmatic layout</strong>: Copilot reads storyboard XML and generates equivalent Auto Layout or SwiftUI code, removing the binary file format that causes painful merge conflicts.</li>
+<li><strong>Dependency upgrades</strong>: When SPM or CocoaPods dependencies have breaking API changes, Agent HQ can parse the changelogs, identify call sites in your repo, apply the required API updates, and verify the build.</li>
+</ul>
+
+<h3>4. Documentation and Code Comments</h3>
+<p><strong>Automation level: ~90%</strong></p>
+<p>Documentation is consistently under-resourced. Copilot generates:</p>
+<ul>
+<li><strong>DocC-compatible <code>/** */</code> comments</strong> for public APIs, including parameter descriptions, return values, and <code>- Throws</code> annotations derived from the implementation.</li>
+<li><strong>README sections</strong>: Given a module or framework, Agent HQ drafts installation instructions, usage examples, and API overviews.</li>
+<li><strong>Changelog entries</strong>: Based on the commit diff for a release branch, Agent HQ generates structured changelog entries grouped by feature, fix, and breaking change.</li>
+</ul>
+
+<h3>5. CI/CD Pipeline Configuration</h3>
+<p><strong>Automation level: ~75%</strong></p>
+<p>Setting up and maintaining Xcode Cloud or GitHub Actions pipelines for iOS projects is finnicky and error-prone. Agent HQ can:</p>
+<ul>
+<li><strong>Generate GitHub Actions workflows</strong> for build, test, and archive steps — including correct <code>xcodebuild</code> invocations, simulator boot steps, code signing configuration via environment secrets, and artifact upload.</li>
+<li><strong>Configure Fastlane lanes</strong>: Agent HQ writes <code>Fastfile</code> lanes for beta distribution (TestFlight), production release, and screenshot automation, wired to the appropriate certificates and provisioning profiles.</li>
+<li><strong>Diagnose pipeline failures</strong>: When a CI run fails, Agent HQ can read the build log, identify the error (e.g., a missing entitlement, a broken SPM dependency resolution, or an expired certificate), and either fix it automatically or create an issue with a root-cause summary.</li>
+</ul>
+<p><strong>Example — auto-generated GitHub Actions workflow:</strong></p>
+<pre><code>name: iOS CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -switch /Applications/Xcode_16.app
+
+      - name: Resolve Swift Package Manager dependencies
+        run: xcodebuild -resolvePackageDependencies -scheme MyApp
+
+      - name: Build and test
+        run: |
+          xcodebuild test \
+            -scheme MyApp \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -resultBundlePath TestResults \
+            | xcpretty
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults.xcresult
+</code></pre>
+
+<h3>6. Code Review and Static Analysis</h3>
+<p><strong>Automation level: ~70%</strong></p>
+<p>Agent HQ participates in pull request reviews as a first-pass reviewer:</p>
+<ul>
+<li>Flags Swift anti-patterns (e.g., force unwraps without justification, <code>DispatchQueue.main.sync</code> on the main thread, retain cycles in closures).</li>
+<li>Checks for missing error handling, incorrect actor isolation, or violating the project's architecture boundaries.</li>
+<li>Verifies test coverage exists for changed code paths.</li>
+<li>Suggests performance improvements, such as replacing <code>Array</code> linear searches with <code>Set</code> lookups or using lazy sequences for large collections.</li>
+</ul>
+<p>This significantly reduces the burden on senior engineers who otherwise review every PR manually.</p>
+
+<h2>What Still Requires Human Involvement</h2>
+<p>Despite the high automation ceiling, several dimensions of iOS development remain firmly in human territory — and understanding where the boundary lies is critical to using these tools responsibly.</p>
+<h3>Architecture and Product Decisions (~0% automatable)</h3>
+<p>No AI tool can determine <em>what</em> to build. Decisions about user experience, feature scope, privacy trade-offs, monetisation models, and system architecture require context about the business, the users, and the competitive landscape that goes far beyond a code repository. Engineers and product managers own:</p>
+<ul>
+<li>Defining the right data model for a feature domain</li>
+<li>Choosing between SwiftUI and UIKit for a complex interactive element</li>
+<li>Deciding how to structure offline-first sync</li>
+<li>Evaluating which third-party SDKs to trust with user data</li>
+</ul>
+<h3>Security and Privacy Review (~10% automatable)</h3>
+<p>iOS apps handle sensitive data — location, health, contacts, payment information. While Copilot can flag obvious issues (e.g., logging a password to the console, storing tokens in UserDefaults rather than the Keychain), a thorough security review requires human expertise:</p>
+<ul>
+<li><strong>App Transport Security (ATS) exceptions</strong>: Any exceptions to ATS require deliberate justification reviewed by a human.</li>
+<li><strong>Entitlement and capability scope</strong>: Adding capabilities like push notifications, HealthKit access, or background modes must be reviewed for minimal-privilege compliance.</li>
+<li><strong>Dependency vetting</strong>: Third-party SDKs must be evaluated for privacy data collection declarations and App Store policy compliance — something Agent HQ can surface but not decisively judge.</li>
+</ul>
+<h3>Accessibility and UX Polish (~20% automatable)</h3>
+<p>Copilot can add basic <code>accessibilityLabel</code> attributes and ensure minimum tap-target sizes, but genuine accessibility quality requires:</p>
+<ul>
+<li>Testing with VoiceOver on a real device to validate reading order and element descriptions</li>
+<li>Verifying Dynamic Type behaviour across all text size categories</li>
+<li>Evaluating the emotional quality of micro-interactions and motion</li>
+</ul>
+<h3>Debugging Non-Deterministic and Device-Specific Issues (~15% automatable)</h3>
+<p>Intermittent test failures, memory corruption on specific hardware, and race conditions in multithreaded code often require deep investigation with Xcode Instruments, lldb, and Memory Graph Debugger. While Copilot can explain stack traces and suggest hypotheses, the iterative debugging process — forming a theory, instrumenting the code, reproducing on a physical device — remains highly manual.</p>
+<h3>App Store Submission and Review Management (~30% automatable)</h3>
+<p>Agent HQ can automate screenshot generation (via Fastlane Snapshot), metadata population, and build archiving. However:</p>
+<ul>
+<li>App Store review responses require human judgement and often involve providing compelling arguments about guideline compliance.</li>
+<li>Privacy nutrition labels must be completed by someone who understands exactly what data each SDK collects.</li>
+<li>Phased rollout decisions are a product call, not a code task.</li>
+</ul>
+
+<h2>Practical Workflow: End-to-End Feature Delivery</h2>
+<p>Here is a realistic workflow showing how these tools fit into feature delivery for an iOS team:</p>
+<p>| Stage | Tool | Human role |
+|---|---|---|
+| Feature scoping | — | Product + engineering define requirements in a GitHub issue |
+| Branch + scaffold | Agent HQ | Reviews the generated PR for architecture fit |
+| Core implementation | Copilot (inline + chat) | Engineers steer, review, and refine generated code |
+| Unit tests | Copilot Chat | Engineers verify test intent matches requirements |
+| Code review (first pass) | Agent HQ | Senior engineers handle non-trivial review feedback |
+| CI setup / pipeline fix | Agent HQ | Engineer verifies signing and provisioning config |
+| Accessibility pass | — | QA / engineer tests with VoiceOver on device |
+| Security review | Copilot (flags issues) | Security-aware engineer confirms compliance |
+| App Store submission | Fastlane + Agent HQ | PM/engineer confirms metadata and phased rollout |</p>
+
+<h2>Quantifying the Time Savings</h2>
+<p>Based on typical mid-sized iOS feature work (a new screen with networking, local persistence, and UI):</p>
+<p>| Activity | Manual time | With Copilot + Agent HQ | Saving |
+|---|---|---|---|
+| Boilerplate / scaffolding | 3–4 hours | 15–30 minutes | ~85% |
+| Unit test authoring | 2–3 hours | 30–45 minutes | ~75% |
+| PR code review (first pass) | 45–60 minutes | 10–15 minutes | ~75% |
+| CI pipeline setup | 2–3 hours | 20–30 minutes | ~85% |
+| Documentation | 1–2 hours | 10–15 minutes | ~85% |
+| Refactoring (e.g., async migration) | 3–6 hours | 30–60 minutes | ~85% |
+| <strong>Total (example feature)</strong> | <strong>~14–21 hours</strong> | <strong>~3–4 hours</strong> | <strong>~80%</strong> |</p>
+<p>The remaining 20% — architecture decisions, security review, accessibility testing, debugging hardware-specific issues, and App Store management — continues to demand skilled human engineers.</p>
+
+<h2>Getting Started</h2>
+<p>To integrate these tools into an iOS project today:</p>
+<ol>
+<li><strong>Enable VS Code Copilot</strong> with the Swift extension and ensure the project opens correctly from the repository root.</li>
+<li><strong>Set up GitHub Agent HQ</strong> by enabling GitHub Copilot for your organisation and configuring the agent in repository settings.</li>
+<li><strong>Add an MCP server for Xcode tools</strong> so Copilot Agent mode can invoke <code>xcodebuild</code> and interact with simulators directly.</li>
+<li><strong>Define a prompt file</strong> (<code>.github/copilot-instructions.md</code>) that documents your project's architecture patterns, naming conventions, and testing expectations so generated code stays consistent.</li>
+<li><strong>Integrate Agent HQ into your issue workflow</strong>: add the <code>@copilot</code> mention to issues where automated implementation is appropriate, and set expectations with your team about when to use it versus writing code manually.</li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>GitHub Agent HQ and VS Code Copilot are not replacements for iOS engineers — they are force multipliers that shift the nature of the work. The most skilled engineers on a team can now operate at a significantly higher level of abstraction: defining architecture, reviewing generated code for correctness and fit, investing time in the uniquely human elements of software quality (accessibility, security, product sense, and debugging the truly hard problems).</p>
+<p>For iOS teams willing to invest in learning these tools and tuning them to their codebase conventions, the productivity dividend is substantial — roughly 75–85% reduction in time spent on implementation and test authoring, at the cost of a modest upfront configuration effort.</p>
+<p>Interested in rolling out an AI-assisted development workflow for your iOS or mobile team? <a href="/#contact">Get in touch with Skillfield</a>.</p>
+4:[["$","nav",null,{"aria-label":"Main navigation","children":["$","div",null,{"className":"container","children":["$","div",null,{"className":"nav-inner","children":[["$","a",null,{"href":"/","className":"nav-wordmark","aria-label":"Skillfield home","children":["$","img",null,{"src":"https://skillfield.com.au/wp-content/uploads/2022/05/LogoSkillfield-Logo-WHT120W.png","alt":"Skillfield","height":"40","width":"auto","style":{"display":"block","height":"40px","width":"auto"}}]}],["$","ul",null,{"className":"nav-links","role":"list","children":[["$","li","Data & AI Services-/#ai",{"children":["$","$Lf",null,{"href":"/#ai","className":"$undefined","children":"Data & AI Services"}]}],["$","li","Cyber Security Services-/#security",{"children":["$","$Lf",null,{"href":"/#security","className":"$undefined","children":"Cyber Security Services"}]}],["$","li","Blog-/blog/",{"children":["$","$Lf",null,{"href":"/blog/","className":"$undefined","children":"Blog"}]}],["$","li","Contact-/#contact",{"children":["$","$Lf",null,{"href":"/#contact","className":"nav-cta","children":"Contact"}]}]]}]]}]}]}],["$","article",null,{"className":"post-page","children":["$","div",null,{"className":"container","children":[["$","nav",null,{"className":"breadcrumb","aria-label":"Breadcrumb","children":[["$","$Lf",null,{"href":"/","children":"Home"}],["$","span",null,{"aria-hidden":"true","children":">"}],["$","$Lf",null,{"href":"/blog/","children":"Blog"}],["$","span",null,{"aria-hidden":"true","children":">"}],["$","span",null,{"children":"Automate iOS Development with GitHub Agent HQ and VS Code Copilot"}]]}],["$","header",null,{"className":"post-header","children":[["$","div",null,{"className":"post-meta","children":[["$","time",null,{"dateTime":"2026-03-16","children":"16 March 2026"}],[["$","span","automate-ios-development-github-agent-copilot-Engineering",{"className":"post-tag","children":"Engineering"}]]]}],["$","h1",null,{"children":"Automate iOS Development with GitHub Agent HQ and VS Code Copilot"}],["$","p",null,{"className":"post-description","children":"Discover how GitHub Agent HQ and Visual Studio Code Copilot can automate large portions of your iOS development workflow — from code generation and unit tests to CI/CD pipelines — and exactly where human judgement still matters most."}]]}],["$","div",null,{"className":"post-content","dangerouslySetInnerHTML":{"__html":"$10"}}],"$L11"]}]}],"$L12"]
+11:["$","div",null,{"className":"post-footer-nav","children":["$","$Lf",null,{"href":"/blog/","className":"btn-ghost","children":"<- Back to Blog"}]}]
+12:["$","footer",null,{"children":["$","div",null,{"className":"container","children":["$","div",null,{"className":"footer-inner","children":[["$","div",null,{"className":"footer-brand","children":[["$","div",null,{"className":"footer-wordmark","children":["$","img",null,{"src":"https://skillfield.com.au/wp-content/uploads/2022/05/LogoSkillfield-Logo-WHTHQ.png","alt":"Skillfield","style":{"display":"block","height":"36px","width":"auto","marginBottom":"4px"}}]}],["$","div",null,{"className":"footer-tagline","children":"Cyber Security · AI · Data Services"}]]}],["$","p",null,{"className":"footer-copy","children":"© 2026 Skillfield. All rights reserved."}],["$","div",null,{"className":"footer-meta","children":["Melbourne, Australia"," · ",["$","a",null,{"href":"mailto:info@skillfield.com.au","children":"info@skillfield.com.au"}]]}]]}]}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+6:null
+13:I[622,[],"IconMark"]
+8:{"metadata":[["$","title","0",{"children":"Automate iOS Development with GitHub Agent HQ and VS Code Copilot - Skillfield"}],["$","meta","1",{"name":"description","content":"Discover how GitHub Agent HQ and Visual Studio Code Copilot can automate large portions of your iOS development workflow — from code generation and unit tests to CI/CD pipelines — and exactly where human judgement still matters most."}],["$","link","2",{"rel":"icon","href":"https://skillfield.com.au/wp-content/uploads/2022/05/Skillfield-Logo-FULLFAV32.png"}],["$","$L13","3",{}]],"error":null,"digest":"$undefined"}
+d:"$8:metadata"

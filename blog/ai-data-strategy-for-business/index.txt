@@ -1,0 +1,54 @@
+1:"$Sreact.fragment"
+2:I[9766,[],""]
+3:I[8924,[],""]
+5:I[4431,[],"OutletBoundary"]
+7:I[5278,[],"AsyncMetadataOutlet"]
+9:I[4431,[],"ViewportBoundary"]
+b:I[4431,[],"MetadataBoundary"]
+c:"$Sreact.suspense"
+e:I[7150,[],""]
+:HL["/skillfield-landing-dev/_next/static/css/bb7dabb493078b71.css","style"]
+0:{"P":null,"b":"GepbvRhi97acXAyIfPqfn","p":"/skillfield-landing-dev","c":["","blog","ai-data-strategy-for-business",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","ai-data-strategy-for-business","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/skillfield-landing-dev/_next/static/css/bb7dabb493078b71.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","ai-data-strategy-for-business","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$L6",["$","$L7",null,{"promise":"$@8"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$L9",null,{"children":"$La"}],null],["$","$Lb",null,{"children":["$","div",null,{"hidden":true,"children":["$","$c",null,{"fallback":null,"children":"$Ld"}]}]}]]}],false]],"m":"$undefined","G":["$e",[]],"s":false,"S":true}
+f:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","953","static/chunks/app/blog/%5Bslug%5D/page-11e7c977ff23a5b5.js"],""]
+10:T983,<p>Artificial intelligence promises transformative business outcomes — but without the right data foundation, AI projects often fail to deliver. Here's how to build a strategy that works.</p>
+<h2>The Data-First Imperative</h2>
+<p>Before any AI initiative can succeed, organisations need high-quality, accessible data. The most sophisticated machine learning model is only as good as the data it's trained on.</p>
+<p>Common data challenges we encounter:</p>
+<ul>
+<li><strong>Data silos</strong> — Critical information locked in disconnected systems</li>
+<li><strong>Data quality</strong> — Inconsistent, incomplete, or outdated records</li>
+<li><strong>Governance gaps</strong> — No clear ownership or lifecycle management</li>
+<li><strong>Infrastructure constraints</strong> — On-premises systems that limit scalability</li>
+</ul>
+<h2>Building Your Data Platform</h2>
+<p>A modern data platform typically consists of:</p>
+<ol>
+<li><strong>Data ingestion layer</strong> — ETL/ELT pipelines that reliably move data from source systems</li>
+<li><strong>Storage and processing</strong> — Cloud data warehouses (Snowflake, BigQuery, Databricks)</li>
+<li><strong>Data governance</strong> — Catalogues, lineage tracking, and access controls</li>
+<li><strong>Analytics and AI layer</strong> — BI tools, feature stores, and model serving infrastructure</li>
+</ol>
+<h2>From Data to AI</h2>
+<p>Once the data foundation is solid, AI initiatives have a much higher chance of success. Practical applications Skillfield has delivered include:</p>
+<ul>
+<li><strong>Predictive maintenance</strong> for manufacturing and utilities clients</li>
+<li><strong>Customer churn prediction</strong> for subscription-based businesses</li>
+<li><strong>Automated anomaly detection</strong> for financial services</li>
+<li><strong>Natural language processing</strong> for document processing and compliance</li>
+</ul>
+<h2>Measuring Success</h2>
+<p>AI and data projects need clear metrics from the start. We help clients define:</p>
+<ul>
+<li><strong>Business KPIs</strong> — Revenue impact, cost reduction, efficiency gains</li>
+<li><strong>Technical metrics</strong> — Model accuracy, latency, data freshness</li>
+<li><strong>Operational metrics</strong> — Pipeline reliability, data quality scores</li>
+</ul>
+<p>Interested in developing an AI and data strategy for your organisation? <a href="/#contact">Contact the Skillfield team</a>.</p>
+4:[["$","nav",null,{"aria-label":"Main navigation","children":["$","div",null,{"className":"container","children":["$","div",null,{"className":"nav-inner","children":[["$","a",null,{"href":"/","className":"nav-wordmark","aria-label":"Skillfield home","children":["$","img",null,{"src":"https://skillfield.com.au/wp-content/uploads/2022/05/LogoSkillfield-Logo-WHT120W.png","alt":"Skillfield","height":"40","width":"auto","style":{"display":"block","height":"40px","width":"auto"}}]}],["$","ul",null,{"className":"nav-links","role":"list","children":[["$","li","Data & AI Services-/#ai",{"children":["$","$Lf",null,{"href":"/#ai","className":"$undefined","children":"Data & AI Services"}]}],["$","li","Cyber Security Services-/#security",{"children":["$","$Lf",null,{"href":"/#security","className":"$undefined","children":"Cyber Security Services"}]}],["$","li","Blog-/blog/",{"children":["$","$Lf",null,{"href":"/blog/","className":"$undefined","children":"Blog"}]}],["$","li","Contact-/#contact",{"children":["$","$Lf",null,{"href":"/#contact","className":"nav-cta","children":"Contact"}]}]]}]]}]}]}],["$","article",null,{"className":"post-page","children":["$","div",null,{"className":"container","children":[["$","nav",null,{"className":"breadcrumb","aria-label":"Breadcrumb","children":[["$","$Lf",null,{"href":"/","children":"Home"}],["$","span",null,{"aria-hidden":"true","children":">"}],["$","$Lf",null,{"href":"/blog/","children":"Blog"}],["$","span",null,{"aria-hidden":"true","children":">"}],["$","span",null,{"children":"Building an AI & Data Strategy That Delivers Real Business Value"}]]}],["$","header",null,{"className":"post-header","children":[["$","div",null,{"className":"post-meta","children":[["$","time",null,{"dateTime":"2026-03-05","children":"5 March 2026"}],[["$","span","ai-data-strategy-for-business-AI & Data",{"className":"post-tag","children":"AI & Data"}]]]}],["$","h1",null,{"children":"Building an AI & Data Strategy That Delivers Real Business Value"}],["$","p",null,{"className":"post-description","children":"Many organisations invest in AI tools but struggle to see measurable ROI. A clear data strategy is the foundation of successful AI adoption."}]]}],["$","div",null,{"className":"post-content","dangerouslySetInnerHTML":{"__html":"$10"}}],"$L11"]}]}],"$L12"]
+11:["$","div",null,{"className":"post-footer-nav","children":["$","$Lf",null,{"href":"/blog/","className":"btn-ghost","children":"<- Back to Blog"}]}]
+12:["$","footer",null,{"children":["$","div",null,{"className":"container","children":["$","div",null,{"className":"footer-inner","children":[["$","div",null,{"className":"footer-brand","children":[["$","div",null,{"className":"footer-wordmark","children":["$","img",null,{"src":"https://skillfield.com.au/wp-content/uploads/2022/05/LogoSkillfield-Logo-WHTHQ.png","alt":"Skillfield","style":{"display":"block","height":"36px","width":"auto","marginBottom":"4px"}}]}],["$","div",null,{"className":"footer-tagline","children":"Cyber Security · AI · Data Services"}]]}],["$","p",null,{"className":"footer-copy","children":"© 2026 Skillfield. All rights reserved."}],["$","div",null,{"className":"footer-meta","children":["Melbourne, Australia"," · ",["$","a",null,{"href":"mailto:info@skillfield.com.au","children":"info@skillfield.com.au"}]]}]]}]}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+6:null
+13:I[622,[],"IconMark"]
+8:{"metadata":[["$","title","0",{"children":"Building an AI & Data Strategy That Delivers Real Business Value - Skillfield"}],["$","meta","1",{"name":"description","content":"Many organisations invest in AI tools but struggle to see measurable ROI. A clear data strategy is the foundation of successful AI adoption."}],["$","link","2",{"rel":"icon","href":"https://skillfield.com.au/wp-content/uploads/2022/05/Skillfield-Logo-FULLFAV32.png"}],["$","$L13","3",{}]],"error":null,"digest":"$undefined"}
+d:"$8:metadata"

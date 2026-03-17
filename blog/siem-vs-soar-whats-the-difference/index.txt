@@ -1,0 +1,59 @@
+1:"$Sreact.fragment"
+2:I[9766,[],""]
+3:I[8924,[],""]
+5:I[4431,[],"OutletBoundary"]
+7:I[5278,[],"AsyncMetadataOutlet"]
+9:I[4431,[],"ViewportBoundary"]
+b:I[4431,[],"MetadataBoundary"]
+c:"$Sreact.suspense"
+e:I[7150,[],""]
+:HL["/skillfield-landing-dev/_next/static/css/bb7dabb493078b71.css","style"]
+0:{"P":null,"b":"GepbvRhi97acXAyIfPqfn","p":"/skillfield-landing-dev","c":["","blog","siem-vs-soar-whats-the-difference",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","siem-vs-soar-whats-the-difference","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/skillfield-landing-dev/_next/static/css/bb7dabb493078b71.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","siem-vs-soar-whats-the-difference","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$L6",["$","$L7",null,{"promise":"$@8"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$L9",null,{"children":"$La"}],null],["$","$Lb",null,{"children":["$","div",null,{"hidden":true,"children":["$","$c",null,{"fallback":null,"children":"$Ld"}]}]}]]}],false]],"m":"$undefined","G":["$e",[]],"s":false,"S":true}
+f:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","953","static/chunks/app/blog/%5Bslug%5D/page-11e7c977ff23a5b5.js"],""]
+10:Tbf2,<p>Security teams are often presented with both SIEM and SOAR solutions. While these technologies complement each other, they serve fundamentally different functions.</p>
+<h2>What Is SIEM?</h2>
+<p><strong>Security Information and Event Management (SIEM)</strong> is a platform that collects, aggregates, and analyses security event data from across your entire IT environment in real time.</p>
+<p>Key SIEM capabilities:</p>
+<ul>
+<li><strong>Log collection</strong> — Aggregating logs from servers, endpoints, firewalls, and applications</li>
+<li><strong>Correlation</strong> — Identifying patterns and relationships across disparate events</li>
+<li><strong>Alerting</strong> — Notifying security teams of suspicious activity</li>
+<li><strong>Compliance reporting</strong> — Generating audit trails for regulatory requirements (PCI DSS, ISO 27001, etc.)</li>
+<li><strong>Forensic investigation</strong> — Historical data search for incident analysis</li>
+</ul>
+<h2>What Is SOAR?</h2>
+<p><strong>Security Orchestration, Automation and Response (SOAR)</strong> takes things a step further by automating the response to security incidents that SIEM (or other tools) detect.</p>
+<p>Key SOAR capabilities:</p>
+<ul>
+<li><strong>Playbook automation</strong> — Codifying response procedures as automated workflows</li>
+<li><strong>Tool integration</strong> — Connecting your entire security stack (EDR, firewall, ticketing)</li>
+<li><strong>Case management</strong> — Tracking incidents from detection through resolution</li>
+<li><strong>Metrics and reporting</strong> — Measuring SOC performance and mean time to respond (MTTR)</li>
+</ul>
+<h2>The Key Difference</h2>
+<p>Think of it this way:</p>
+<ul>
+<li><strong>SIEM = Detection and visibility</strong> — "Something suspicious is happening"</li>
+<li><strong>SOAR = Response and automation</strong> — "Here's what we're doing about it automatically"</li>
+</ul>
+<p>A SIEM tells your team there's a problem. A SOAR helps your team — or automates — the response.</p>
+<h2>Do You Need Both?</h2>
+<p>For most organisations with a dedicated security operations function, <strong>yes</strong> — both add value and work better together.</p>
+<p>The decision depends on:</p>
+<ul>
+<li><strong>Team size</strong> — Smaller teams benefit more from SOAR automation</li>
+<li><strong>Alert volume</strong> — High-volume environments need automation to scale</li>
+<li><strong>Maturity level</strong> — Start with SIEM visibility, then add SOAR automation as processes mature</li>
+</ul>
+<h2>Skillfield's Approach</h2>
+<p>Skillfield is an Elastic Premium Partner, and we implement both SIEM (via the Elastic Security platform) and SOAR capabilities tailored to your organisation's size, threat profile, and budget.</p>
+<p>Our five-layer approach to cyber security means we help you build incrementally — starting where you get the most value, not deploying everything at once.</p>
+<p>Want to learn more about how SIEM and SOAR fit into your security strategy? <a href="/#contact">Let's talk</a>.</p>
+4:[["$","nav",null,{"aria-label":"Main navigation","children":["$","div",null,{"className":"container","children":["$","div",null,{"className":"nav-inner","children":[["$","a",null,{"href":"/","className":"nav-wordmark","aria-label":"Skillfield home","children":["$","img",null,{"src":"https://skillfield.com.au/wp-content/uploads/2022/05/LogoSkillfield-Logo-WHT120W.png","alt":"Skillfield","height":"40","width":"auto","style":{"display":"block","height":"40px","width":"auto"}}]}],["$","ul",null,{"className":"nav-links","role":"list","children":[["$","li","Data & AI Services-/#ai",{"children":["$","$Lf",null,{"href":"/#ai","className":"$undefined","children":"Data & AI Services"}]}],["$","li","Cyber Security Services-/#security",{"children":["$","$Lf",null,{"href":"/#security","className":"$undefined","children":"Cyber Security Services"}]}],["$","li","Blog-/blog/",{"children":["$","$Lf",null,{"href":"/blog/","className":"$undefined","children":"Blog"}]}],["$","li","Contact-/#contact",{"children":["$","$Lf",null,{"href":"/#contact","className":"nav-cta","children":"Contact"}]}]]}]]}]}]}],["$","article",null,{"className":"post-page","children":["$","div",null,{"className":"container","children":[["$","nav",null,{"className":"breadcrumb","aria-label":"Breadcrumb","children":[["$","$Lf",null,{"href":"/","children":"Home"}],["$","span",null,{"aria-hidden":"true","children":">"}],["$","$Lf",null,{"href":"/blog/","children":"Blog"}],["$","span",null,{"aria-hidden":"true","children":">"}],["$","span",null,{"children":"SIEM vs SOAR: What's the Difference and Do You Need Both?"}]]}],["$","header",null,{"className":"post-header","children":[["$","div",null,{"className":"post-meta","children":[["$","time",null,{"dateTime":"2026-02-28","children":"28 February 2026"}],[["$","span","siem-vs-soar-whats-the-difference-Cyber Security",{"className":"post-tag","children":"Cyber Security"}]]]}],["$","h1",null,{"children":"SIEM vs SOAR: What's the Difference and Do You Need Both?"}],["$","p",null,{"className":"post-description","children":"SIEM and SOAR are both essential tools in a modern security operations centre, but they serve different purposes. Understanding the distinction helps you invest wisely."}]]}],["$","div",null,{"className":"post-content","dangerouslySetInnerHTML":{"__html":"$10"}}],"$L11"]}]}],"$L12"]
+11:["$","div",null,{"className":"post-footer-nav","children":["$","$Lf",null,{"href":"/blog/","className":"btn-ghost","children":"<- Back to Blog"}]}]
+12:["$","footer",null,{"children":["$","div",null,{"className":"container","children":["$","div",null,{"className":"footer-inner","children":[["$","div",null,{"className":"footer-brand","children":[["$","div",null,{"className":"footer-wordmark","children":["$","img",null,{"src":"https://skillfield.com.au/wp-content/uploads/2022/05/LogoSkillfield-Logo-WHTHQ.png","alt":"Skillfield","style":{"display":"block","height":"36px","width":"auto","marginBottom":"4px"}}]}],["$","div",null,{"className":"footer-tagline","children":"Cyber Security · AI · Data Services"}]]}],["$","p",null,{"className":"footer-copy","children":"© 2026 Skillfield. All rights reserved."}],["$","div",null,{"className":"footer-meta","children":["Melbourne, Australia"," · ",["$","a",null,{"href":"mailto:info@skillfield.com.au","children":"info@skillfield.com.au"}]]}]]}]}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+6:null
+13:I[622,[],"IconMark"]
+8:{"metadata":[["$","title","0",{"children":"SIEM vs SOAR: What's the Difference and Do You Need Both? - Skillfield"}],["$","meta","1",{"name":"description","content":"SIEM and SOAR are both essential tools in a modern security operations centre, but they serve different purposes. Understanding the distinction helps you invest wisely."}],["$","link","2",{"rel":"icon","href":"https://skillfield.com.au/wp-content/uploads/2022/05/Skillfield-Logo-FULLFAV32.png"}],["$","$L13","3",{}]],"error":null,"digest":"$undefined"}
+d:"$8:metadata"
