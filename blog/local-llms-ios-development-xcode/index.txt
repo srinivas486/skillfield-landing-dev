@@ -1,0 +1,254 @@
+1:"$Sreact.fragment"
+2:I[9766,[],""]
+3:I[8924,[],""]
+5:I[4431,[],"OutletBoundary"]
+7:I[5278,[],"AsyncMetadataOutlet"]
+9:I[4431,[],"ViewportBoundary"]
+b:I[4431,[],"MetadataBoundary"]
+c:"$Sreact.suspense"
+e:I[7150,[],""]
+:HL["/skillfield-landing-dev/_next/static/css/bb7dabb493078b71.css","style"]
+0:{"P":null,"b":"RGnXOF-MNCRkKh1T9Bym7","p":"/skillfield-landing-dev","c":["","blog","local-llms-ios-development-xcode",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","local-llms-ios-development-xcode","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/skillfield-landing-dev/_next/static/css/bb7dabb493078b71.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","local-llms-ios-development-xcode","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$L6",["$","$L7",null,{"promise":"$@8"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$L9",null,{"children":"$La"}],null],["$","$Lb",null,{"children":["$","div",null,{"hidden":true,"children":["$","$c",null,{"fallback":null,"children":"$Ld"}]}]}]]}],false]],"m":"$undefined","G":["$e",[]],"s":false,"S":true}
+f:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","953","static/chunks/app/blog/%5Bslug%5D/page-11e7c977ff23a5b5.js"],""]
+10:T39d5,<p>Apple Silicon has quietly shifted the economics of AI inference. An M-series Mac can run a capable large language model entirely on-device, with no API keys, no usage costs, and no data leaving your machine. For iOS developers, this creates two distinct opportunities: using a local LLM as a coding assistant inside Xcode, and shipping on-device LLM features inside iOS apps themselves.</p>
+<p>This post covers both dimensions — how to set up and use local LLMs for your Xcode development workflow today, and how to build iOS applications that run language models on the device.</p>
+
+<h2>Why Local LLMs for iOS Development?</h2>
+<p>Cloud-based AI assistants like GitHub Copilot and ChatGPT are excellent, but they come with trade-offs that matter in certain contexts:</p>
+<ul>
+<li><strong>Privacy and confidentiality</strong> — Source code, credentials, and internal APIs never leave your machine when the model runs locally.</li>
+<li><strong>No rate limits or usage costs</strong> — Local inference runs freely, with no per-token charges or throttling during intensive sessions.</li>
+<li><strong>Offline capability</strong> — You can code on a plane, on a remote site, or in a restricted network environment with no degradation.</li>
+<li><strong>Low latency</strong> — For short completions, local models on Apple Silicon can be faster than a round-trip to a remote API.</li>
+<li><strong>On-device app features</strong> — Running LLMs locally enables AI features in iOS apps that work without an internet connection.</li>
+</ul>
+<p>The trade-off is model quality. Local models that fit on consumer hardware (7B–13B parameters) are capable but not yet equal to frontier models like GPT-4o or Claude 3.5 Sonnet for complex reasoning tasks. Knowing when to use local versus cloud inference is the core skill.</p>
+
+<h2>Running a Local LLM on Your Mac</h2>
+<h3>Option 1: Ollama (Recommended)</h3>
+<p><a href="https://ollama.com">Ollama</a> is the simplest way to run open-weight models on macOS. It handles model downloads, GPU/Neural Engine acceleration on Apple Silicon, and exposes an OpenAI-compatible REST API on <code>localhost:11434</code>.</p>
+<p><strong>Install and run:</strong></p>
+<pre><code># Install Ollama
+brew install ollama
+
+# Pull a coding-focused model
+ollama pull codellama:13b
+
+# Or a general-purpose model with strong instruction following
+ollama pull llama3.2:3b
+ollama pull mistral:7b
+
+# Start the local server
+ollama serve
+</code></pre>
+<p><strong>Test the API directly:</strong></p>
+<pre><code>curl http://localhost:11434/api/generate \
+  -d '{
+    "model": "codellama:13b",
+    "prompt": "Write a Swift function to decode a JSON response into a Codable struct",
+    "stream": false
+  }'
+</code></pre>
+<p>Because Ollama exposes an OpenAI-compatible API at <code>/v1/chat/completions</code>, any tool that can point to a custom base URL — including VS Code Copilot Chat, Continue.dev, and Cursor — can use your local model as the backend.</p>
+<h3>Option 2: LM Studio</h3>
+<p><a href="https://lmstudio.ai">LM Studio</a> provides a graphical interface for downloading and running models from Hugging Face. It also exposes a local server with OpenAI-compatible endpoints. LM Studio is a good option if you prefer a GUI over the command line, or if you want to experiment with different quantisation levels (Q4, Q6, Q8) to find the best quality-speed balance for your hardware.</p>
+<h3>Choosing a Model for iOS/Swift Development</h3>
+<p>| Model | Parameters | Best for | VRAM (Q4) |
+|---|---|---|---|
+| <code>codellama:7b</code> | 7B | Swift/Objective-C completions | ~4 GB |
+| <code>codellama:13b</code> | 13B | Full function generation, refactoring | ~8 GB |
+| <code>llama3.2:3b</code> | 3B | Fast completions, explanations | ~2 GB |
+| <code>mistral:7b</code> | 7B | Reasoning, docstrings, reviews | ~5 GB |
+| <code>deepseek-coder:6.7b</code> | 6.7B | Code generation, test authoring | ~4 GB |</p>
+<p>For active Xcode sessions, <code>codellama:13b</code> on an M2 Pro or above gives the best balance of quality and response speed.</p>
+
+<h2>Integrating a Local LLM into Your Xcode Workflow</h2>
+<h3>1. Continue.dev as an AI Sidebar (Recommended)</h3>
+<p><a href="https://continue.dev">Continue</a> is an open-source VS Code extension that connects to any OpenAI-compatible endpoint. Since many iOS developers now use VS Code alongside or instead of Xcode for editing:</p>
+<ol>
+<li>Install the Continue extension in VS Code.</li>
+<li>Open Continue's config file (<code>~/.continue/config.json</code>) and add your local Ollama model:</li>
+</ol>
+<pre><code>{
+  "models": [
+    {
+      "title": "CodeLlama 13B (local)",
+      "provider": "ollama",
+      "model": "codellama:13b",
+      "apiBase": "http://localhost:11434"
+    }
+  ]
+}
+</code></pre>
+<ol>
+<li>Use <code>Cmd+L</code> to open the Continue chat sidebar. You can highlight Swift code in the editor and ask the model to explain, refactor, or write tests for it — all processed locally.</li>
+</ol>
+<h3>2. Using Local LLMs Directly from the Terminal</h3>
+<p>For developers who prefer to stay in Xcode for editing, a terminal-based workflow with <code>ollama run</code> is effective for discrete tasks:</p>
+<pre><code># Ask for a SwiftUI view implementation
+ollama run codellama:13b "Write a SwiftUI List view that displays a list of User objects with name and email fields, using a NavigationStack"
+
+# Generate unit tests for an existing function
+cat Sources/MyApp/UserService.swift | ollama run codellama:13b "Write XCTest unit tests for the fetchUser function in this file"
+
+# Generate DocC comments
+ollama run mistral:7b "Write DocC-compatible documentation comments for this Swift protocol: $(cat Sources/MyApp/UserServiceProtocol.swift)"
+</code></pre>
+<h3>3. Xcode Source Editor Extensions</h3>
+<p>Xcode supports Source Editor Extensions that can read the current selection and invoke external processes. You can build a lightweight extension that sends the selected Swift code to your local Ollama server and inserts the result. The extension communicates via <code>URLSession</code> to <code>localhost:11434</code>.</p>
+<p>A minimal extension command looks like:</p>
+<pre><code>import XcodeKit
+import Foundation
+
+class LocalLLMCommand: NSObject, XCSourceEditorCommand {
+    func perform(with invocation: XCSourceEditorCommandInvocation,
+                 completionHandler: @escaping (Error?) -&gt; Void) {
+        guard let selection = invocation.buffer.selections.firstObject as? XCSourceTextRange else {
+            completionHandler(nil)
+            return
+        }
+
+        let selectedLines = (selection.start.line...selection.end.line)
+            .compactMap { invocation.buffer.lines[$0] as? String }
+            .joined()
+
+        Task {
+            do {
+                let suggestion = try await OllamaClient.complete(prompt: selectedLines)
+                // Insert suggestion after selection
+                invocation.buffer.lines.insert(suggestion, at: selection.end.line + 1)
+                completionHandler(nil)
+            } catch {
+                completionHandler(error)
+            }
+        }
+    }
+}
+</code></pre>
+
+<h2>Building iOS Apps with On-Device LLMs</h2>
+<p>Beyond using local LLMs as a developer tool, iOS 18 and Apple's on-device ML stack make it possible to ship LLM features directly in your app — running entirely on the iPhone or iPad.</p>
+<h3>Apple Intelligence and On-Device Foundation Models (iOS 18+)</h3>
+<p>Apple's Apple Intelligence framework (available on A17 Pro and M-series devices) provides system-level LLM capabilities accessible to developers via:</p>
+<ul>
+<li><strong>Writing Tools</strong> — System-provided text transformation, summarisation, and rewriting that your app can integrate via <code>UITextView</code> with no custom model needed.</li>
+<li><strong>Foundation Models framework</strong> (announced WWDC 2025) — A Swift API that lets your app call Apple's on-device 3B parameter model directly for text generation and classification tasks.</li>
+</ul>
+<pre><code>import FoundationModels
+
+let session = LanguageModelSession()
+
+let response = try await session.respond(
+    to: "Summarise the following meeting notes in three bullet points:\n\(notesText)"
+)
+
+print(response.content)
+</code></pre>
+<p>This approach requires no model bundling, no API keys, and runs entirely on-device — ideal for features like note summarisation, smart reply suggestions, or content classification.</p>
+<h3>Bundling a Custom Model with Core ML</h3>
+<p>For use cases that require a specific capability not covered by Apple Intelligence — domain-specific classification, custom instruction tuning, or support for older devices — you can convert and bundle your own model using Core ML.</p>
+<p><strong>Convert a model to Core ML format:</strong></p>
+<pre><code># Install coremltools
+pip install coremltools transformers
+
+# Convert a HuggingFace model to Core ML
+python3 &lt;&lt; 'EOF'
+import coremltools as ct
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+model_id = "microsoft/phi-2"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16)
+
+# Trace with example inputs matching the model's expected shape
+example_input_ids = torch.zeros((1, 64), dtype=torch.long)
+traced = torch.jit.trace(model, (example_input_ids,))
+mlmodel = ct.convert(traced, compute_units=ct.ComputeUnit.ALL)
+mlmodel.save("Phi2.mlpackage")
+EOF
+</code></pre>
+<p>Add the <code>.mlpackage</code> to your Xcode project and load it:</p>
+<pre><code>import CoreML
+
+guard let modelURL = Bundle.main.url(forResource: "Phi2", withExtension: "mlpackage"),
+      let model = try? MLModel(contentsOf: modelURL) else {
+    return
+}
+
+// Run inference via the generated model class
+let input = Phi2Input(inputIds: tokenIds)
+let output = try model.prediction(from: input)
+</code></pre>
+<h3>Using Swift Transformers (llm.swift)</h3>
+<p>The <a href="https://github.com/huggingface/swift-transformers">swift-transformers</a> package from Hugging Face provides a high-level Swift API for running transformer models on Apple devices using Metal Performance Shaders:</p>
+<pre><code>// Package.swift dependency
+.package(url: "https://github.com/huggingface/swift-transformers", from: "0.1.12")
+</code></pre>
+<pre><code>import Transformers
+
+let pipeline = try await TextGenerationPipeline(
+    model: "distilgpt2",
+    tokenizer: "distilgpt2"
+)
+
+let result = try await pipeline.generate(
+    text: "The best way to learn Swift is",
+    maxNewTokens: 100
+)
+
+print(result)
+</code></pre>
+<p>This library handles model download, tokenisation, and batched generation on the device's GPU/Neural Engine.</p>
+
+<h2>Performance Considerations for On-Device Inference</h2>
+<p>Running LLMs on iPhone and iPad hardware is feasible but requires careful management:</p>
+<p>| Factor | Guidance |
+|---|---|
+| <strong>Model size</strong> | 1B–3B parameter models are practical; 7B models are possible on M-series iPads but slow on A-series iPhones |
+| <strong>Quantisation</strong> | Use 4-bit quantisation (Q4) to reduce memory by ~70% with minimal quality loss |
+| <strong>Thermal management</strong> | Monitor <code>ProcessInfo.thermalState</code> and pause inference if the device enters <code>.serious</code> or <code>.critical</code> state |
+| <strong>Memory pressure</strong> | Subscribe to <code>UIApplication.didReceiveMemoryWarningNotification</code> and release model resources if needed |
+| <strong>Background inference</strong> | Keep generation sessions short; avoid running inference in background tasks where iOS may terminate the process |</p>
+<pre><code>// Monitor thermal state before inference
+let thermalState = ProcessInfo.processInfo.thermalState
+guard thermalState == .nominal || thermalState == .fair else {
+    // Defer inference or fall back to cloud
+    return
+}
+</code></pre>
+
+<h2>Local vs. Cloud LLMs: When to Use Each</h2>
+<p>| Scenario | Local LLM | Cloud LLM |
+|---|---|---|
+| Confidential source code | ✅ Preferred | ⚠️ Review data policy |
+| Complex architectural reasoning | ⚠️ Limited | ✅ Preferred |
+| Offline / air-gapped development | ✅ Only option | ✗ Not available |
+| Continuous inline completions | ✅ No cost ceiling | ⚠️ Token costs accumulate |
+| App features on older devices | ⚠️ Limited model size | ✅ Full capability via API |
+| Regulated data (health, finance) | ✅ Data never leaves device | ⚠️ Compliance review needed |
+| Latest model quality | ⚠️ Smaller models | ✅ Frontier models |</p>
+<p>A common pattern is a <strong>local-first fallback</strong>: attempt inference on-device and, if the query is too complex or the device is thermally constrained, fall back to a cloud API with the user's explicit consent.</p>
+
+<h2>Getting Started Checklist</h2>
+<ol>
+<li><strong>Install Ollama</strong> with <code>brew install ollama</code> and pull <code>codellama:13b</code> or <code>llama3.2:3b</code>.</li>
+<li><strong>Connect Continue.dev</strong> in VS Code to your local Ollama server and experiment with chat-assisted Swift refactoring.</li>
+<li><strong>Evaluate Apple Intelligence APIs</strong> (iOS 18+, A17 Pro / M-series) for built-in summarisation and generation — no bundled model required.</li>
+<li><strong>Prototype with swift-transformers</strong> to understand the UX of on-device generation: latency, thermal behaviour, and user-facing progress indicators.</li>
+<li><strong>Benchmark on your target device class</strong> — latency acceptable on an M4 iPad Pro may be unusable on an iPhone 14.</li>
+<li><strong>Design graceful fallbacks</strong> — on-device inference should degrade gracefully to a cloud API or a simplified rule-based path, never a hard failure.</li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>Local LLMs have crossed the threshold of practical usefulness for iOS development. On the developer tooling side, running CodeLlama or Mistral on your Mac gives you a private, cost-free coding assistant that integrates with Xcode and VS Code through tools like Ollama and Continue.dev. On the product side, Apple Intelligence APIs and Core ML provide the infrastructure to ship on-device language model features to users without the complexity of cloud infrastructure.</p>
+<p>The models available locally today are not yet equal to frontier cloud models for every task — but for Swift code generation, documentation, test authoring, and lightweight in-app intelligence, they are more than capable. As model efficiency continues to improve with each generation of Apple Silicon, the gap will narrow further.</p>
+<p>Ready to integrate local AI capabilities into your iOS development workflow or ship on-device AI features to your users? <a href="/#contact">Get in touch with the Skillfield team</a>.</p>
+4:[["$","nav",null,{"aria-label":"Main navigation","children":["$","div",null,{"className":"container","children":["$","div",null,{"className":"nav-inner","children":[["$","a",null,{"href":"/","className":"nav-wordmark","aria-label":"Skillfield home","children":["$","img",null,{"src":"https://skillfield.com.au/wp-content/uploads/2022/05/LogoSkillfield-Logo-WHT120W.png","alt":"Skillfield","height":"40","width":"auto","style":{"display":"block","height":"40px","width":"auto"}}]}],["$","ul",null,{"className":"nav-links","role":"list","children":[["$","li","Data & AI Services-/#ai",{"children":["$","$Lf",null,{"href":"/#ai","className":"$undefined","children":"Data & AI Services"}]}],["$","li","Cyber Security Services-/#security",{"children":["$","$Lf",null,{"href":"/#security","className":"$undefined","children":"Cyber Security Services"}]}],["$","li","Blog-/blog/",{"children":["$","$Lf",null,{"href":"/blog/","className":"$undefined","children":"Blog"}]}],["$","li","Contact-/#contact",{"children":["$","$Lf",null,{"href":"/#contact","className":"nav-cta","children":"Contact"}]}]]}]]}]}]}],["$","article",null,{"className":"post-page","children":["$","div",null,{"className":"container","children":[["$","nav",null,{"className":"breadcrumb","aria-label":"Breadcrumb","children":[["$","$Lf",null,{"href":"/","children":"Home"}],["$","span",null,{"aria-hidden":"true","children":">"}],["$","$Lf",null,{"href":"/blog/","children":"Blog"}],["$","span",null,{"aria-hidden":"true","children":">"}],["$","span",null,{"children":"Local LLMs and iOS Development in Xcode: A Practical Guide"}]]}],["$","header",null,{"className":"post-header","children":[["$","div",null,{"className":"post-meta","children":[["$","time",null,{"dateTime":"2026-03-18","children":"18 March 2026"}],[["$","span","local-llms-ios-development-xcode-Engineering",{"className":"post-tag","children":"Engineering"}]]]}],["$","h1",null,{"children":"Local LLMs and iOS Development in Xcode: A Practical Guide"}],["$","p",null,{"className":"post-description","children":"Learn how to run large language models locally on Apple Silicon and integrate them into your iOS development workflow in Xcode — from AI-assisted coding to shipping on-device intelligence in your apps."}]]}],["$","div",null,{"className":"post-content","dangerouslySetInnerHTML":{"__html":"$10"}}],"$L11"]}]}],"$L12"]
+11:["$","div",null,{"className":"post-footer-nav","children":["$","$Lf",null,{"href":"/blog/","className":"btn-ghost","children":"<- Back to Blog"}]}]
+12:["$","footer",null,{"children":["$","div",null,{"className":"container","children":["$","div",null,{"className":"footer-inner","children":[["$","div",null,{"className":"footer-brand","children":[["$","div",null,{"className":"footer-wordmark","children":["$","img",null,{"src":"https://skillfield.com.au/wp-content/uploads/2022/05/LogoSkillfield-Logo-WHTHQ.png","alt":"Skillfield","style":{"display":"block","height":"36px","width":"auto","marginBottom":"4px"}}]}],["$","div",null,{"className":"footer-tagline","children":"Cyber Security · AI · Data Services"}]]}],["$","p",null,{"className":"footer-copy","children":"© 2026 Skillfield. All rights reserved."}],["$","div",null,{"className":"footer-meta","children":["Melbourne, Australia"," · ",["$","a",null,{"href":"mailto:info@skillfield.com.au","children":"info@skillfield.com.au"}]]}]]}]}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+6:null
+13:I[622,[],"IconMark"]
+8:{"metadata":[["$","title","0",{"children":"Local LLMs and iOS Development in Xcode: A Practical Guide - Skillfield"}],["$","meta","1",{"name":"description","content":"Learn how to run large language models locally on Apple Silicon and integrate them into your iOS development workflow in Xcode — from AI-assisted coding to shipping on-device intelligence in your apps."}],["$","link","2",{"rel":"icon","href":"https://skillfield.com.au/wp-content/uploads/2022/05/Skillfield-Logo-FULLFAV32.png"}],["$","$L13","3",{}]],"error":null,"digest":"$undefined"}
+d:"$8:metadata"
